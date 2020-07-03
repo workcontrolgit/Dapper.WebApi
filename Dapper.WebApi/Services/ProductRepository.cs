@@ -42,12 +42,14 @@ namespace Dapper.WebApi.Services
         //        return result;
         //    }
         //}
+        // Original
         //public Product GetById(int id)
         //{
         //    var product = _executers.ExecuteCommand<Product>(_connStr, conn =>
         //        conn.Query<Product>(_commandText.GetProductById, new { @Id = id }).SingleOrDefault());
         //    return product;
         //}
+        // Without baserepository
         //public async Task<Product> GetById(int id)
         //{
         //    using (var conn = new SqlConnection(_connStr))
@@ -58,6 +60,7 @@ namespace Dapper.WebApi.Services
         //    }
         //}
 
+        // Use baserepository
         public async Task<Product> GetById(int id)
         {
             return await WithConnection(async conn =>
