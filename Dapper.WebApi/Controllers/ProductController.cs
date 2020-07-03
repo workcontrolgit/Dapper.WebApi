@@ -21,19 +21,14 @@ namespace Dapper.WebApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult GellAll()
+        public async Task<ActionResult<Product>> GellAll()
         {
-           var products= _productRepository.GetAllProducts();
+           var products= await _productRepository.GetAllProducts();
             return Ok(products);
         }
 
         [HttpGet]
         [Route("{id}")]
-        //public ActionResult<Product> GetById(int id)
-        //{
-        //    var product = _productRepository.GetById(id);
-        //    return Ok(product);
-        //}
         public async Task<ActionResult<Product>> GetById(int id)
         {
             var product = await _productRepository.GetById(id);

@@ -27,11 +27,18 @@ namespace Dapper.WebApi.Services
 
         }
 
-        public List<Product> GetAllProducts()
+        public async Task<List<Product>> GetAllProducts()
         {
-            var query = _executers.ExecuteCommand(_connStr,
-                   conn => conn.Query<Product>(_commandText.GetProducts)).ToList();
-            return query;
+            //var query = _executers.ExecuteCommand(_connStr,
+            //       conn => conn.Query<Product>(_commandText.GetProducts)).ToList();
+            //return query;
+
+            return await WithConnection(async conn =>
+            {
+                var result = await conn.QueryAsync<Product>(_commandText.GetProducts);
+                return result.ToList();
+            });
+
         }
         //public async Task<List<Product>> GetAllProducts()
         //{
@@ -65,8 +72,8 @@ namespace Dapper.WebApi.Services
         {
             return await WithConnection(async conn =>
             {
-                var result = await conn.QueryAsync<Product>(_commandText.GetProductById, new { Id = id });
-                return result.FirstOrDefault();
+                var result = await conn.QueryFirstOrDefaultAsync<Product>(_commandText.GetProductById, new { Id = id });
+                return result;
             });
         }
 
