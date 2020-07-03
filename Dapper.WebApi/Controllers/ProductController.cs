@@ -29,9 +29,14 @@ namespace Dapper.WebApi.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public ActionResult<Product> GetById(int id)
+        //public ActionResult<Product> GetById(int id)
+        //{
+        //    var product = _productRepository.GetById(id);
+        //    return Ok(product);
+        //}
+        public async Task<ActionResult<Product>> GetById(int id)
         {
-            var product = _productRepository.GetById(id);
+            var product = await _productRepository.GetById(id);
             return Ok(product);
         }
         [HttpPost]
