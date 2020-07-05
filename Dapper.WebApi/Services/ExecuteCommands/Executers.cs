@@ -1,25 +1,25 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
-
+using System.Threading.Tasks;
 
 namespace Dapper.WebApi.Services.ExecuteCommands
 {
     public class Executers: IExecuters
     { 
-        public  void ExecuteCommand(string connStr, Action<SqlConnection> task)
+        public async Task ExecuteCommand(string connStr, Action<SqlConnection> task)
         {
             using (var conn = new SqlConnection(connStr))
             {
-                conn.Open();
+                await conn.OpenAsync();
                 task(conn);
             }
         }
-        public  T ExecuteCommand<T>(string connStr, Func<SqlConnection, T> task)
+        public async Task<T> ExecuteCommand<T>(string connStr, Func<SqlConnection, Task<T>> task)
         {
             using (var conn = new SqlConnection(connStr))
             {
-                conn.Open();
-                return task(conn);
+                await conn.OpenAsync();
+                return await task(conn);
             }
         }
     }

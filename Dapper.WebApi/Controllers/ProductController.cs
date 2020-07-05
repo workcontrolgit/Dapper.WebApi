@@ -35,21 +35,21 @@ namespace Dapper.WebApi.Controllers
             return Ok(product);
         }
         [HttpPost]
-        public ActionResult AddProduct(Product entity)
+        public async Task<ActionResult> AddProduct(Product entity)
         {
-            _productRepository.AddProduct(entity);
+            await _productRepository.AddProduct(entity);
             return Ok(entity);
         }
         [HttpPut("{id}")]
-        public ActionResult<Product> Update(Product entity, int id)
+        public async Task<ActionResult<Product>> Update(Product entity, int id)
         {
-            _productRepository.UpdateProduct(entity, id);
+            await _productRepository.UpdateProduct(entity, id);
             return Ok(entity);
         }
         [HttpDelete("{id}")]
-        public ActionResult<Product> Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            _productRepository.RemoveProduct(id);
+            await _productRepository.RemoveProduct(id);
             return Ok();
         }
     }

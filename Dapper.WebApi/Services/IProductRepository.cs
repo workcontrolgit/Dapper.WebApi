@@ -9,9 +9,9 @@ namespace Dapper.WebApi.Services
     public interface IProductRepository
     {
         Task<Product> GetById(int id);
-        void AddProduct(Product entity);
-        void UpdateProduct(Product entity, int id);
-        void RemoveProduct(int id);
+        Task AddProduct(Product entity);
+        Task UpdateProduct(Product entity, int id);
+        Task RemoveProduct(int id);
         //List<Product> GetAllProducts();
         Task<List<Product>> GetAllProducts();
     }
