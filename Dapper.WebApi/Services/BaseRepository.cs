@@ -1,9 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Dapper.WebApi.Services
@@ -15,7 +13,7 @@ namespace Dapper.WebApi.Services
 		protected BaseRepository(IConfiguration configuration)
 		{
 			_configuration = configuration;
-			_ConnectionString = _configuration.GetConnectionString("Dapper");
+			_ConnectionString = _configuration.GetConnectionString("DefaultConnection");
 		}
 
 		// use for buffered queries that return a type
