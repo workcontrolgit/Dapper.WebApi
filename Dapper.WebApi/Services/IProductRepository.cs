@@ -12,7 +12,6 @@ namespace Dapper.WebApi.Services
         Task AddProduct(Product entity);
         Task UpdateProduct(Product entity, int id);
         Task RemoveProduct(int id);
-        //List<Product> GetAllProducts();
         Task<List<Product>> GetAllProducts();
     }
 }
