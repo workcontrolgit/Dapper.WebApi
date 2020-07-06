@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Dapper.WebApi.Models;
 using Dapper.WebApi.Services.Queries;
@@ -28,7 +27,7 @@ namespace Dapper.WebApi.Services
 
         }
 
-        public async Task<Product> GetById(int id)
+        public async ValueTask<Product> GetById(int id)
         {
             return await WithConnection(async conn =>
             {

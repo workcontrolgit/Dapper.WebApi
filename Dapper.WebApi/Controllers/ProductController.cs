@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Dapper.WebApi.Models;
 using Dapper.WebApi.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dapper.WebApi.Controllers
@@ -29,7 +25,7 @@ namespace Dapper.WebApi.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<ActionResult<Product>> GetById(int id)
+        public async ValueTask<ActionResult<Product>> GetById(int id)
         {
             var product = await _productRepository.GetById(id);
             return Ok(product);
