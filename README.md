@@ -1,4 +1,5 @@
-This repository is a forked from https://github.com/berkayyerdelen/Dapper.WebApi.  I made the following update to the repo
+## Background
+I am working on a ASP.NET CORE 3.1 WebAPI project that requires to call database procedures to get data.  I found an excellent blog on Medium written by Oguz Berkay Yerdelen (https://medium.com/@berkayyerdelen/building-restful-api-with-dapper-and-asp-net-core-37e6d9d1bdda).  The blog came with with source code on Github.  I forked and and experimented with Dapper and Repository pattern.  I made a few changes:
 
 ### Async/Await (to support high volumn webapi calls)
 - Updated Services\IProductRepository.cs with keyword Task
@@ -13,3 +14,6 @@ This repository is a forked from https://github.com/berkayyerdelen/Dapper.WebApi
 - Updated connection string in asppsettings.json to use common Server=(localdb)\\mssqllocaldb (vs desktop name)
 - Updated launhUrl to "swagger" (in the Properties\launchSettings.json)
 - Referereced NSwag.AspNetCore package via Nuget Management and Updated Startup.cs to use UseSwaggerUi3
+
+#Credit
+The base class to manage the connection string is from https://www.joesauve.com/async-dapper-and-async-sql-connection-management/
