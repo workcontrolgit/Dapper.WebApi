@@ -17,13 +17,13 @@ namespace Dapper.WebApi.Services
 
         }
 
-        public async Task<List<Product>> GetAllProducts()
+        public async Task<IEnumerable<Product>> GetAllProducts()
         {
 
             return await WithConnection(async conn =>
             {
                 var query = await conn.QueryAsync<Product>(_commandText.GetProducts);
-                return query.ToList();
+                return query;
             });
 
         }
