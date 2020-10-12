@@ -15,8 +15,8 @@ I am working on a ASP.NET CORE 3.1 WebAPI project that requires to call database
 - Updated launhUrl to "swagger" (in the Properties\launchSettings.json)
 - Referereced NSwag.AspNetCore package via Nuget Management and Updated Startup.cs to use UseSwaggerUi3
 
-# Credit
+## Credit
 The base class to manage the connection string is from https://www.joesauve.com/async-dapper-and-async-sql-connection-management/
 
-# Example of ASP.NET WebAPI using Dapper
+## Example of ASP.NET WebAPI using Dapper
 I am using Dapper in a sample ASP.NET CORE 3.1 project that is part of the DevKit WebAPI Security tutorial.  The DevKit contains source code for an integrated Client, Api Resource and Secure Token Service projects that all can run on localhost.   If you are interested to see how dapper is used in a large project, visit https://medium.com/@fuji.nguyen/devkit-webapi-security-d7a45e34a5cd
