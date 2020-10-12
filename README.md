@@ -19,4 +19,4 @@ I am working on a ASP.NET CORE 3.1 WebAPI project that requires to call database
 The base class to manage the connection string is from https://www.joesauve.com/async-dapper-and-async-sql-connection-management/
 
 ## Example of ASP.NET WebAPI using Dapper
-I am using Dapper in a sample ASP.NET CORE 3.1 project that is part of the DevKit WebAPI Security tutorial.  The DevKit contains source code for an integrated Client, Api Resource and Secure Token Service projects that all can run on localhost.   If you are interested to see how dapper is used in a large project, visit https://medium.com/@fuji.nguyen/devkit-webapi-security-d7a45e34a5cd
+I am using Dapper in a sample ASP.NET CORE 3.1 project that is part of the DevKit WebAPI Security tutorial.  The DevKit contains source code for an end-to-end, scalable solution consisting of an Angular SPA, ASP.NET CORE WebAPI/Dapper and IdentityServer4 for Identify and Access Management (IAM).   If you are interested to see Dapper in the big picture, visit https://medium.com/@fuji.nguyen/devkit-webapi-security-d7a45e34a5cd
